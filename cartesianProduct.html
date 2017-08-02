@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>笛卡尔乘积javascript版本</title>
+</head>
+<body>
+</body>
+<script type="text/javascript">
+    /**
+     * 笛卡尔乘积
+     * 一个二维数组
+     * ['红色', '绿色', '蓝色', '白色'],
+     * ['S', 'M', 'L', 'XL', 'XXL'],
+     * ['套餐1', '套餐2', '套餐3', '套餐4', '套餐5', '套餐6'],
+     * ['包邮', '不包邮'],
+     * 转换成一维数组
+     * [
+     *   '红色,S,套餐1,包邮',
+     *   '红色,S,套餐1,不包邮',
+     *   '红色,S,套餐2,包邮',
+     *   '红色,S,套餐2,不包邮',
+     *   ....
+     * ]
+     * @param arr
+     * @param depth
+     */
+    function cartesianProduct(arr, depth) {
+        for (var i = 0; i < arr[depth].length; i++) {
+            result[depth] = arr[depth][i];
+            if (depth != arr.length - 1) {
+                cartesianProduct(arr, depth + 1);
+            } else {
+                results.push(result.join(','));
+            }
+        }
+    }
+
+    function test(arr) {
+        results = [];
+        result = [];
+        cartesianProduct(arr, 0);
+        console.log(results);
+    }
+
+    garr = [
+        ['红色', '绿色', '蓝色', '白色'],
+        ['S', 'M', 'L', 'XL', 'XXL'],
+        ['套餐1', '套餐2', '套餐3', '套餐4', '套餐5', '套餐6'],
+        ['包邮', '不包邮'],
+    ];
+    test(garr);
+
+</script>
+</html>
